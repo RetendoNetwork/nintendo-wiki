@@ -12,6 +12,10 @@ else
     branch_name="$2"
 fi
 
+git branch
+
+git checkout main
+
 git status
 
 git add .
