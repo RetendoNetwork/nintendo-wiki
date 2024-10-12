@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -26,7 +26,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
             'https://github.com/RetendoNetwork/nintendo-wiki/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -43,7 +43,7 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
@@ -63,9 +63,9 @@ const config: Config = {
           label: 'Home',
           position: 'left',
         },
-        {to: '/docs/home', label: 'Documentations', position: 'left'},
+        { to: '/docs/home', label: 'Documentations', position: 'left' },
         {
-          href: 'https://github.com/facebook/nintendo-wiki',
+          href: 'https://github.com/RetendoNetwork/nintendo-wiki',
           label: 'GitHub',
           position: 'right',
         },
@@ -114,7 +114,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} RetendoNetwork. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
