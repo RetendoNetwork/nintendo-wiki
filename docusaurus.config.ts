@@ -13,7 +13,7 @@ const config: Config = {
   organizationName: 'RetendoNetwork',
   projectName: 'nintendo-wiki',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -55,7 +55,7 @@ const config: Config = {
       title: 'Nintendo Wiki',
       logo: {
         alt: 'Nintendo Wiki Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon.ico',
       },
       items: [
         {
