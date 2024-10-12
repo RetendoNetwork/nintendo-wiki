@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknintendo_wiki=self.webpackChunknintendo_wiki||[]).push([[647],{7121:(e,n,s)=>{s.r(n),s.d(n,{default:()=>d});s(6540);var r=s(4164),i=s(1003),t=s(7559),u=s(2831),a=s(781),c=s(4848);function d(e){return(0,c.jsx)(i.e3,{className:(0,r.A)(t.G.wrapper.docsPages),children:(0,c.jsx)(a.A,{children:(0,u.v)(e.route.routes)})})}}}]);
