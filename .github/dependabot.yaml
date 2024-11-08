@@ -1,0 +1,21 @@
+# .github/dependabot.yaml
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "docusaurus"
+        versions: ["<2.0.0"]
+    commit-message:
+      prefix: "deps"
+      prefix-development: "chore"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci"
