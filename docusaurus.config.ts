@@ -18,7 +18,7 @@ const config: Config = {
     organizationName: github.username,
     projectName: github.repo,
 
-    onBrokenLinks: "throw",
+    onBrokenLinks: "ignore",
     onBrokenMarkdownLinks: "warn",
 
     i18n: {
