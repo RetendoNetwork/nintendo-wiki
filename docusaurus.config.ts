@@ -1,126 +1,70 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+
+const github = {
+    username: "RetendoNetwork",
+    repo: "nintendo-wiki",
+};
 
 const config: Config = {
-  title: 'Nintendo Wiki',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+    title: "Pretendo Docker Documentation",
+    tagline: "An unofficial Docker Compose setup for self-hosting a Pretendo Network server.",
+    favicon: "img/favicon.ico",
 
-  url: 'https://nintendo-wiki.innoverse.club',
-  baseUrl: '/',
+    // GitHub Pages deployment configuration
+    url: `https://${github.username.toLowerCase()}.github.io`,
+    baseUrl: `/${github.repo}/`,
+    organizationName: github.username,
+    projectName: github.repo,
 
-  organizationName: 'RetendoNetwork',
-  projectName: 'nintendo-wiki',
+    onBrokenLinks: "throw",
+    onBrokenMarkdownLinks: "warn",
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+    i18n: {
+        defaultLocale: "en",
+        locales: ["en"],
+    },
 
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
-
-  presets: [
-    [
-      'classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl:
-            'https://github.com/RetendoNetwork/nintendo-wiki/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/RetendoNetwork/nintendo-wiki/tree/main/packages/create-docusaurus/templates/shared/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      } satisfies Preset.Options,
+    presets: [
+        [
+            "classic",
+            {
+                docs: {
+                    routeBasePath: "/",
+                    sidebarPath: "./sidebars.ts",
+                    editUrl: `https://github.com/${github.username}/${github.repo}/tree/main/docs/`,
+                },
+                blog: false,
+                pages: false,
+                theme: {
+                    customCss: "./src/css/custom.css",
+                },
+            } satisfies Preset.Options,
+        ],
     ],
-  ],
 
-  themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
-    navbar: {
-      title: 'Nintendo Wiki',
-      logo: {
-        alt: 'Nintendo Wiki Logo',
-        src: 'img/favicon.ico',
-      },
-      items: [
-        {
-          to: '/home',
-          label: 'Home',
-          position: 'left',
+    themeConfig: {
+        navbar: {
+            title: "Pretendo Docker Documentation",
+            logo: {
+                alt: "Docusaurus Logo",
+                src: "img/logo.svg",
+            },
+            items: [
+                {
+                    href: `https://github.com/${github.username}/${github.repo}`,
+                    label: "GitHub",
+                    position: "right",
+                },
+            ],
         },
-        { to: '/docs/home', label: 'Documentations', position: 'left' },
-        {
-          href: 'https://github.com/RetendoNetwork/nintendo-wiki',
-          label: 'GitHub',
-          position: 'right',
+        prism: {
+            additionalLanguages: ["bash"],
+            theme: prismThemes.github,
+            darkTheme: prismThemes.dracula,
         },
-      ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Home',
-              to: '/home',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Documentations',
-              to: '/docs/home',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/RetendoNetwork',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} RetendoNetwork. Built with Docusaurus.`,
-    },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
-  } satisfies Preset.ThemeConfig,
+    } satisfies Preset.ThemeConfig,
 };
 
 export default config;

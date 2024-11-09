@@ -1,12 +1,12 @@
-name: Build and deploy nintendo-wiki site
+name: Build and deploy documentation site
 
 on:
   push:
     paths:
-      - "**"
+      - "docs/**"
   pull_request:
     paths:
-      - "**"
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
