@@ -8,8 +8,8 @@ const github = {
 };
 
 const config: Config = {
-    title: "Pretendo Docker Documentation",
-    tagline: "An unofficial Docker Compose setup for self-hosting a Pretendo Network server.",
+    title: "nintendo-wiki",
+    tagline: "Nintendo Wiki Documentation",
     favicon: "img/favicon.ico",
 
     // GitHub Pages deployment configuration
@@ -46,7 +46,7 @@ const config: Config = {
 
     themeConfig: {
         navbar: {
-            title: "Pretendo Docker Documentation",
+            title: "nintendo-wiki",
             logo: {
                 alt: "Docusaurus Logo",
                 src: "img/logo.svg",
