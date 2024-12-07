@@ -1,70 +1,121 @@
-import { themes as prismThemes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
-
-const github = {
-    username: "RetendoNetwork",
-    repo: "nintendo-wiki",
-};
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-    title: "nintendo-wiki",
-    tagline: "Nintendo Wiki Documentation",
-    favicon: "img/favicon.ico",
+  title: 'nintendo-wiki',
+  tagline: 'Welcome to nintendo-wiki',
+  favicon: 'img/favicon.ico',
 
-    // GitHub Pages deployment configuration
-    url: `https://${github.username.toLowerCase()}.github.io`,
-    baseUrl: `/`,
-    organizationName: github.username,
-    projectName: github.repo,
+  url: 'https://your-docusaurus-site.example.com',
+  baseUrl: '/',
 
-    onBrokenLinks: "ignore",
-    onBrokenMarkdownLinks: "warn",
+  organizationName: 'facebook',
+  projectName: 'docusaurus',
 
-    i18n: {
-        defaultLocale: "en",
-        locales: ["en"],
-    },
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
-    presets: [
-        [
-            "classic",
-            {
-                docs: {
-                    routeBasePath: "/",
-                    sidebarPath: "./sidebars.ts",
-                    editUrl: `https://github.com/${github.username}/${github.repo}/tree/main/docs/`,
-                },
-                blog: false,
-                pages: false,
-                theme: {
-                    customCss: "./src/css/custom.css",
-                },
-            } satisfies Preset.Options,
-        ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: './sidebars.ts',
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
     ],
+  ],
 
-    themeConfig: {
-        navbar: {
-            title: "nintendo-wiki",
-            logo: {
-                alt: "Docusaurus Logo",
-                src: "img/logo.svg",
+  themeConfig: {
+    image: 'img/docusaurus-social-card.jpg',
+    navbar: {
+      title: 'nintendo-wiki',
+      logo: {
+        alt: 'nintendo-wiki Logo',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Documentations',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Documentations',
+              to: '/docs/welcome',
             },
-            items: [
-                {
-                    href: `https://github.com/${github.username}/${github.repo}`,
-                    label: "GitHub",
-                    position: "right",
-                },
-            ],
+          ],
         },
-        prism: {
-            additionalLanguages: ["bash"],
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
+            {
+              label: 'X',
+              href: 'https://x.com/docusaurus',
+            },
+          ],
         },
-    } satisfies Preset.ThemeConfig,
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} nintendo-wiki, Inc. Built with Docusaurus.`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  } satisfies Preset.ThemeConfig,
 };
 
 export default config;
